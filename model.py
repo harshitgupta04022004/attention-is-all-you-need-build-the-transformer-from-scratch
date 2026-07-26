@@ -86,7 +86,7 @@ def compute_positional_div_term(d_model):
     lst = [1.0]
     
     for i in range(1,l):
-        lst.append((10000**(-2*i/d_model)))
+        lst.append(10000**(-2*i/d_model))
     return torch.tensor(lst)
 
 # Step 9 - build_position_index_column (not yet solved)
