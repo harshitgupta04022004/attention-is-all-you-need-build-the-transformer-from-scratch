@@ -106,8 +106,7 @@ def fill_even_indices_with_sin(pe, position, div_term):
     l,d = pe.shape
     position = build_position_index_column(l)
     div_term = compute_positional_div_term(d)
-    ans = torch.sin(position*div_term)
-    pe[:, 0:d:2] = ans
+    pe[:, 0:d:2] = torch.sin(position*div_term)
     return pe
 
 # Step 11 - fill_odd_indices_with_cos (not yet solved)
