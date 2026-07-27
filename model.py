@@ -129,10 +129,7 @@ def build_sinusoidal_positional_encoding(max_len, d_model):
     matrix = torch.zeros((max_len,d_model),dtype=torch.float64)
     even_postional_div_term = fill_even_indices_with_sin(pe,position,div_term)
     odd_postional_div_term = fill_odd_indices_with_cos(pe,position,div_term)
-    print(even_postional_div_term)
-    print(odd_postional_div_term)
-    matrix = even_postional_div_term + odd_postional_div_term
-    return matrix
+    return pe
 
 # Step 13 - add_positional_encoding_to_embeddings (not yet solved)
 # TODO: implement
